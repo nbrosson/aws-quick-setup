@@ -29,3 +29,8 @@ resource "aws_instance" "ubuntu_vm" {
   vpc      = true
   instance = aws_instance.ubuntu_vm.id
 }
+
+resource "local_file" "elastic_ip" {
+  content  = aws_eip.ip.public_ip
+  filename = "./output/eip.txt"
+}
