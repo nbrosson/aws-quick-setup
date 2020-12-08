@@ -1,5 +1,5 @@
 resource "aws_default_security_group" "default" {
-   vpc_id      = "${aws_default_vpc.default.id}"
+   vpc_id      = aws_default_vpc.default.id
  ingress {
      # Open SSH port
      from_port   = 22
